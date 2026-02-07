@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Campus Health | IIM Shillong</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Campus Health</h1>
+    <p>IIM Shillong Student Well-Being Companion</p>
+  </header>
+
+  <section class="card">
+    <h2>Daily 10-Second Check-In</h2>
+
+    <label>😴 Sleep last night (hours)</label>
+    <input type="number" id="sleep" min="0" max="12" />
+
+    <label>🧠 Stress level</label>
+    <select id="stress">
+      <option>Low</option>
+      <option>Moderate</option>
+      <option>High</option>
+    </select>
+
+    <label>🏃 Physical activity today</label>
+    <select id="activity">
+      <option>None</option>
+      <option>Light</option>
+      <option>Moderate</option>
+      <option>Intense</option>
+    </select>
+
+    <label>📌 Add context (optional)</label>
+    <div class="context">
+      <button onclick="addContext('Exam')">Exam</button>
+      <button onclick="addContext('Sick')">Sick</button>
+      <button onclick="addContext('Stress')">Mental Stress</button>
+    </div>
+
+    <button class="primary" onclick="generateStatus()">Check Status</button>
+  </section>
+
+  <section class="card" id="result" style="display:none;">
+    <h2>Your Status Today</h2>
+    <p id="statusText"></p>
+    <small id="explanation"></small>
+  </section>
+
+  <footer>
+    <p>Built for IIM Shillong • Student Wellness Initiative</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
